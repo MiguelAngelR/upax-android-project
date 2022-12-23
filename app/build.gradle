@@ -60,7 +60,7 @@ dependencies {
     kapt "com.github.bumptech.glide:compiler:4.11.0"
 
     // Hilt
-    implementation "com.google.dagger:hilt-android::$rootProject.hilt"
-    kapt "com.google.dagger:hilt-compiler::$rootProject.hilt"
+    implementation "com.google.dagger:hilt-android:$rootProject.hilt"
+    kapt "com.google.dagger:hilt-compiler:$rootProject.hilt"
 
 }

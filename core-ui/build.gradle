@@ -32,6 +32,19 @@ android {
 }
 
 dependencies {
+
+    implementation project(':common')
+
+    api 'androidx.core:core-ktx:1.9.0'
+    api 'androidx.appcompat:appcompat:1.5.1'
+    api 'com.google.android.material:material:1.7.0'
+    api 'androidx.constraintlayout:constraintlayout:2.1.4'
+    api 'androidx.fragment:fragment-ktx:1.5.5'
+    api 'androidx.activity:activity-ktx:1.6.1'
+
+    // Lifecycle
+    api "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.lifecycleVersion"
+
     //Hilt
     implementation "com.google.dagger:hilt-android::$rootProject.hilt"
     kapt "com.google.dagger:hilt-android-compiler::$rootProject.hilt"
