@@ -46,6 +46,6 @@ dependencies {
     api "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.lifecycleVersion"
 
     //Hilt
-    implementation "com.google.dagger:hilt-android::$rootProject.hilt"
-    kapt "com.google.dagger:hilt-android-compiler::$rootProject.hilt"
+    implementation "com.google.dagger:hilt-android:$rootProject.hilt"
+    kapt "com.google.dagger:hilt-android-compiler:$rootProject.hilt"
 }

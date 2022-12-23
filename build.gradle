@@ -12,6 +12,7 @@ buildscript {
         coroutinesVersion = '1.6.4'
         gsonVersion = '2.9.1'
         lifecycleVersion = '2.5.1'
+        retrofit = '2.9.0'
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:7.3.1'
