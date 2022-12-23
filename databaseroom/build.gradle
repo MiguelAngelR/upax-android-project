@@ -31,11 +31,17 @@ android {
 }
 
 dependencies {
+    //Modules
+    implementation project(':core')
+    implementation project(':common')
 
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.5.1'
-    implementation 'com.google.android.material:material:1.7.0'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+    //Hilt
+    implementation "com.google.dagger:hilt-android::$rootProject.hilt"
+    kapt "com.google.dagger:hilt-android-compiler::$rootProject.hilt"
+
+    //Room
+    kapt "androidx.room:room-compiler::$rootProject.room"
+    implementation "androidx.room:room-ktx::$rootProject.room"
+    implementation "androidx.room:room-paging::$rootProject.room"
+
 }

@@ -3,8 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
     id 'kotlin-parcelize'
-//    id 'dagger.hilt.android.plugin'
-//    id 'realm-android'
+    id 'dagger.hilt.android.plugin'
 }
 
 apply from: 'versions.gradle'
@@ -31,19 +30,16 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        coreLibraryDesugaringEnabled true
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
     kotlinOptions {
         jvmTarget = '1.8'
     }
     buildFeatures {
         viewBinding true
-//        compose true
     }
-//    composeOptions {
-//        kotlinCompilerExtensionVersion versions.compose
-//    }
 
     /**
      * Room config to export db schemas
@@ -63,13 +59,20 @@ android {
 }
 
 dependencies {
+
+    implementation project(':core')
+    implementation project(':common')
+    implementation project(':databaseroom')
+    implementation project(':network')
+
+
     // Android base
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'com.google.android.material:material:1.6.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation "androidx.multidex:multidex:2.0.1"
-    implementation "androidx.activity:activity-ktx:$versions.androidxActivity"
+    implementation "androidx.activity:activity-ktx::$rootProject.androidxActivity"
     implementation "androidx.fragment:fragment-ktx:1.4.1"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.4.1"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1"
@@ -99,27 +102,9 @@ dependencies {
     // Coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4"
 
-    // Room
-//    implementation "androidx.room:room-runtime:$versions.room"
-//    implementation "androidx.room:room-ktx:$versions.room"
-//    kapt "androidx.room:room-compiler:$versions.room"
-//    implementation "androidx.room:room-paging:$versions.room"
-
     // Hilt
-//    implementation "com.google.dagger:hilt-android:2.41"
-//    kapt "com.google.dagger:hilt-compiler:2.41"
-
-    // Compose
-//    implementation "androidx.activity:activity-compose:$versions.androidxActivity"
-//    implementation "androidx.compose.ui:ui:$versions.compose"
-//    implementation "androidx.compose.material:material:$versions.compose"
-//    implementation "androidx.compose.ui:ui-tooling:$versions.compose"
-//    implementation "androidx.compose.ui:ui-tooling-preview:$versions.compose"
-//    implementation "androidx.compose.animation:animation:$versions.composeAnimations"
-//    implementation "androidx.lifecycle:lifecycle-viewmodel-compose:$versions.composeViewModel"
-//    implementation "androidx.navigation:navigation-compose:$versions.composeNavigation"
-//    implementation "androidx.hilt:hilt-navigation-compose:$versions.composeNavHilt"
-//    implementation "androidx.paging:paging-compose:$versions.composePaging"
+    implementation "com.google.dagger:hilt-android::$rootProject.hilt"
+    kapt "com.google.dagger:hilt-compiler::$rootProject.hilt"
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
