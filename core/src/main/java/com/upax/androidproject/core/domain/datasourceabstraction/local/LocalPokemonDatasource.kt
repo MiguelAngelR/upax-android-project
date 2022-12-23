@@ -16,4 +16,6 @@ interface LocalPokemonDatasource {
 
     suspend fun deleteAll()
 
+    suspend fun findAllPokemon() : List<Pokemon>
+
 }

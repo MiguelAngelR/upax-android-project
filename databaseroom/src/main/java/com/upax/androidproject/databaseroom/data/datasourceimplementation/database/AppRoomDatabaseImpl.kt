@@ -7,10 +7,12 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.upax.androidproject.databaseroom.data.datasourceimplementation.database.AppRoomDatabaseImpl.Companion.DB_VERSION
 import com.upax.androidproject.databaseroom.domain.datasourceabstraction.AppRoomDatabase
+import com.upax.androidproject.databaseroom.domain.entity.model.PokemonEntity
 
 
 @Database(
     entities = [
+        PokemonEntity::class
     ],
     version = DB_VERSION,
 )
