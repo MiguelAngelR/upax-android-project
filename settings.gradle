@@ -2,3 +2,6 @@ rootProject.name = "upax-android-project"
 include ':app'
 include ':core'
 include ':core-ui'
+include ':common'
+include ':network'
+include ':databaseroom'
